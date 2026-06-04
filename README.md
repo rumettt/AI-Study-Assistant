@@ -10,6 +10,8 @@ Phase 1 establishes the local foundation for the study assistant, and Phase 2 ad
 - Celery + Redis background processing for uploaded files
 - PDF/PPTX/DOCX parsing, semantic chunking, OpenAI embeddings, and Pinecone indexing
 - Hybrid retrieval service using Pinecone vector search + BM25 with Reciprocal Rank Fusion
+- GPT-4o powered chat, summaries, quizzes, and flashcards
+- Study dashboard, rate limiting, Anki export, and deployment config
 
 ## Architecture Decisions
 
@@ -76,6 +78,23 @@ Document processing requires `OPENAI_API_KEY` and `PINECONE_API_KEY` in `.env`. 
 - [x] Document processing status endpoint
 - [x] Frontend upload status polling
 
+## Phase 3 Checklist
+
+- [x] Grounded Q&A endpoint and chat page
+- [x] Summary generation endpoint and page
+- [x] Quiz generation, attempt scoring, and quiz page
+- [x] Flashcard generation, flip UI, and Anki `.apkg` export
+- [x] Centralized prompt constants in `backend/app/prompts.py`
+
+## Phase 4 Checklist
+
+- [x] Per-user AI request rate-limit wiring with SlowAPI
+- [x] Study dashboard page and dashboard API
+- [x] Basic ingestion and retrieval pytest coverage
+- [x] RAGAS evaluation harness placeholder with golden dataset sample
+- [x] `railway.toml` and `vercel.json` deployment configs
+- [x] Production variables documented in `.env.example`
+
 ## Verify Before Phase 2
 
 - Create an account from `/signup`
@@ -86,3 +105,5 @@ Document processing requires `OPENAI_API_KEY` and `PINECONE_API_KEY` in `.env`. 
 - Configure OpenAI and Pinecone keys, then confirm the worker updates uploaded documents to `processed`
 - Confirm rows are created in `chunks`
 - Confirm vectors appear in the configured Pinecone index
+- Generate a summary, quiz, and flashcard set from a processed document
+- Ask a chat question and confirm citations reference uploaded material

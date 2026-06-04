@@ -44,6 +44,9 @@ class Settings(BaseSettings):
     chunk_target_tokens: int = 500
     chunk_overlap_tokens: int = 50
 
+    chat_model: str = "gpt-4o"
+    ai_request_limit: str = "20/hour"
+
     @field_validator("api_cors_origins")
     @classmethod
     def normalize_origins(cls, value: str) -> str:

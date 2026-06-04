@@ -23,3 +23,6 @@ class Document(Base):
 
     user = relationship("User", back_populates="documents")
     chunks = relationship("Chunk", back_populates="document", cascade="all, delete-orphan")
+    summary = relationship("Summary", back_populates="document", cascade="all, delete-orphan", uselist=False)
+    quizzes = relationship("Quiz", back_populates="document", cascade="all, delete-orphan")
+    flashcard_sets = relationship("FlashcardSet", back_populates="document", cascade="all, delete-orphan")

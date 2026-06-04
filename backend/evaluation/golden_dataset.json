@@ -1,0 +1,10 @@
+[
+  {
+    "question": "What is the main topic of the uploaded material?",
+    "expected_answer": "The answer should be grounded in the uploaded document context."
+  },
+  {
+    "question": "List two key concepts from the material.",
+    "expected_answer": "The answer should cite concepts present in the uploaded document context."
+  }
+]
