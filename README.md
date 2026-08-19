@@ -106,4 +106,4 @@ Document processing requires `OPENAI_API_KEY` and `PINECONE_API_KEY` in `.env`. 
 - Confirm rows are created in `chunks`
 - Confirm vectors appear in the configured Pinecone index
 - Generate a summary, quiz, and flashcard set from a processed document
-- Ask a chat question and confirm citations reference uploaded material
+- Ask a chat question and confirm citations reference uploaded material 
